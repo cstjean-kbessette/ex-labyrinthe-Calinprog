@@ -33,7 +33,7 @@ namespace Labyrinthe
                 {
                     if (j == labyrinthe.PosX && i == labyrinthe.PosY)
                     {
-                        Console.Write("P");
+                        Console.Write('P');
                     }
 
                     else

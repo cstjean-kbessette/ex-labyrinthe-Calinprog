@@ -13,14 +13,14 @@
 
         public void Run()
         {
-            while (true)
+            while (!labyrinthe.IsExit())
             {
                 view.AfficherEntete();
                 view.AfficherLabyrinthe(labyrinthe);
 
-                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+                ConsoleKey key = Console.ReadKey().Key;
 
-                switch (keyInfo.Key)
+                switch (key)
                 {
                     case ConsoleKey.UpArrow:
                         labyrinthe.MoveUp();
@@ -35,15 +35,8 @@
                         labyrinthe.MoveRight();
                         break;
                 }
-
-                if (labyrinthe.IsExit())
-                {
-                    view.AfficherVictoire();
-                    Console.WriteLine("Hourra vous vous êtes échappés du labyrinthe!");
-                }
-
-
             }
+            view.AfficherVictoire();
         }
     }
 }
